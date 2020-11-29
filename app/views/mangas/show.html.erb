@@ -15,5 +15,11 @@
   <%= @manga.genre %>
 </p>
 
+<p>
+  <% if @manga.image.attached? %>
+    <%= image_tag @manga.image %>
+  <% end %>
+</p>
+
 <%= link_to 'Edit', edit_manga_path(@manga) %> |
 <%= link_to 'Back', mangas_path %>
