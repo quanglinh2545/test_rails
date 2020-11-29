@@ -70,6 +70,6 @@ class MangasController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def manga_params
-      params.require(:manga).permit(:title, :author, :genre, :image)
+      params.require(:manga).permit(:title, :author, :genre, :image, :detail)
     end
 end
