@@ -10,13 +10,14 @@
   </head>
 
   <body>
-    
-    <% if notice %>
-      <p class="alert alert-success"><%= notice %></p>
+    <% if user_signed_in? %>
+      <p>Hello, <%= current_user.email  %> </p>
+      <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+    <% else %>
+      <%= link_to "Sign in", new_user_session_path %>
+      <%= link_to "Sign up", new_user_registration_path %>
     <% end %>
-    <% if alert %>
-      <p class="alert alert-danger"><%= alert %></p>
-    <% end %>
+    <hr size="1" width="100%" color="grey">
     <%= yield %>
   </body>
 </html>
