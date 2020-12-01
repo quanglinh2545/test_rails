@@ -10,15 +10,12 @@
   </head>
 
   <body>
-    <%= link_to "Home", root_path %>
-    <% if user_signed_in? %>
-      <p>Hello, <%= link_to current_user.name , users_show_path %> </p>
-      <%= link_to "Log out", destroy_user_session_path, method: :delete %>
-    <% else %>
-      <%= link_to "Sign in", new_user_session_path %>
-      <%= link_to "Sign up", new_user_registration_path %>
-    <% end %>
+ 
+   
     <hr size="1" width="100%" color="grey">
+    
+     <%= render 'layouts/header' %>
     <%= yield %>
+    <%= render 'layouts/footer' %>
   </body>
 </html>
