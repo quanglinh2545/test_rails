@@ -11,6 +11,7 @@ class MangasController < ApplicationController
   # GET /mangas/1
   # GET /mangas/1.json
   def show
+     @mangas = Manga.all
   end
 
   # GET /mangas/new
