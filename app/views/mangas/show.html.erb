@@ -130,6 +130,18 @@
   </div>
 <% end %>
                                 </div>
+                                <div class = "shop_text">
+                                    
+<h2 align = center>Review List</h2>
+<ul>
+  <% @manga.manga_review.each do |manga_review|%>
+   <li><%= manga_review.review %>
+     (<i><%= manga_review.user.name if manga_review.user %></i>)</li>
+<% end %>
+</ul>
+
+
+                                </div>
                            </div>
                            
                         </div>

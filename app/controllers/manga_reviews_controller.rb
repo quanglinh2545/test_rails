@@ -25,10 +25,12 @@ class MangaReviewsController < ApplicationController
   # POST /manga_reviews.json
   def create
     @manga_review = MangaReview.new(manga_review_params)
+     @manga_review.user_id = current_user.id
 
     respond_to do |format|
       if @manga_review.save
-        format.html { redirect_to @manga_review, notice: 'Manga review was successfully created.' }
+         url = "/mangas/" + @manga_review.manga_id.to_s
+        format.html { redirect_to url, notice: 'Manga review was successfully created.' }
         format.json { render :show, status: :created, location: @manga_review }
       else
         format.html { render :new }
