@@ -11,7 +11,8 @@ class MangasController < ApplicationController
   # GET /mangas/1
   # GET /mangas/1.json
   def show
-     @mangas = Manga.all
+        @manga_review = MangaReview.new
+        # @book_review = BookReview.new
   end
 
   # GET /mangas/new

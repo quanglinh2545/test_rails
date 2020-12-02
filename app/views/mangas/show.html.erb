@@ -114,7 +114,21 @@
                                  
                                     <h4> <strong>Manga detail:</strong></h4>
                                     <h6><%= @manga.detail %></h6>
+                                   
+                                     
                     
+                                </div>
+                                <div class = "shop_text">
+                                     <h2>Review From</h2>
+<%= form_with(model: @manga_review, local: true) do |form| %>
+  <div class= "field">
+    <%= form.text_area :review %>
+    <%= form.hidden_field :manga_id, :value => @manga.id %>
+  </div>
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
                                 </div>
                            </div>
                            
